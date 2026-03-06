@@ -47,12 +47,15 @@ export const useAuth = () => {
     }
   };
 
+// getAndSetUser() → backend se user fetch karke global state me set karta hai.
+
   useEffect(() => {
     const getAndSetUser = async () => {
       const data = await getMe();
       setUser(data.user);
       setLoading(false);
     };
+    getAndSetUser();
   }, []);
 
   return { user, loading, handleLogin, handleLogout, handleRegister };
