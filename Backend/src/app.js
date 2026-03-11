@@ -1,5 +1,6 @@
 const express = require("express")
 const authRouter = require("./routes/auth.router")
+const interviewRouter = require("./routes/interview.router")
 const app = express()
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
@@ -14,6 +15,7 @@ app.use(cors({
 
 //authRouters
 app.use("/api/auth",authRouter)
+app.use("/api/interview",interviewRouter)
 
 
 

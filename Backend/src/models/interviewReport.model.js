@@ -128,7 +128,11 @@ const interViewReportSchema = new mongoose.Schema({
     technicalQuestion: [technicalQuestionSchema],
     behaviaralQuestion: [behaviaralQuestionSchema],
     skillGap: [skillGapSchema],
-    preparationPlan: [preparationPlanSchema]
+    preparationPlan: [preparationPlanSchema],
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"user"
+    }
 
 },{
     timestamps: true
