@@ -1,0 +1,56 @@
+{
+  "interview_report": "Candidate Assessment",
+  "candidate_name": "Devanshu Tiwaskar",
+  "position": "Full Stack Developer",
+  "location": "Nagpur, India",
+  "education": "Bachelor of Computer Applications",
+  "skills_summary": [
+    "JavaScript",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "HTML",
+    "CSS",
+    "Git"
+  ],
+  "job_alignment_score": "High",
+  "technical_evaluation": "The candidate demonstrates direct proficiency in the required MERN stack. His project portfolio, specifically the URL Shortener API and Pinterest clone, validates his ability to build REST APIs and complex frontend interfaces as requested in the job description.",
+  "experience_level": "Early Career / Junior",
+  "project_portfolio": [
+    "Notes App with React Context API",
+    "URL Shortener API using Node.js and MongoDB",
+    "Pinterest Clone"
+  ],
+  "strengths": [
+    "Strong alignment with required technology stack",
+    "Practical experience in building full-stack applications",
+    "Knowledge of version control using Git",
+    "Focus on clean and maintainable code"
+  ],
+  "areas_for_review": [
+    "Experience with high-traffic scalability",
+    "Collaboration in large cross-functional teams"
+  ],
+  "interview_recommendation": "Proceed to Technical Round",
+  "overall_summary": "Devanshu is a highly relevant candidate for the Full Stack Developer role. He possesses the core technical skills requested (JavaScript, React, Node.js, MongoDB) and has demonstrated them through tangible projects. His self-description suggests a strong motivation for problem-solving and continuous learning, making him a good fit for a growing development team."
+}
+
+
+
+connect to Database
+{"candidate_report":
+  [
+    "candidate_name", "Devanshu Tiwaskar",
+    "position", "Full Stack Developer",
+    "location", "Nagpur, India",
+    "technical_proficiency", "The candidate shows strong proficiency in the MERN stack (MongoDB, Express.js, React.js, Node.js) and core web technologies including JavaScript, HTML, and CSS. Experience with Git is explicitly mentioned, aligning with JD requirements.",
+    "project_analysis", "The candidate has built diverse projects including a state-managed Notes App, a backend-focused URL Shortener API, and a complex UI clone (Pinterest), demonstrating both frontend and backend capabilities.",
+    "education_and_experience", "Holds a Bachelor of Computer Applications. While primary experience stems from intensive training and self-led projects, the candidate demonstrates practical application of theory in full-stack environments.",
+    "skills_match_assessment", "High. Matches all core requirements: JavaScript, React, Node.js, MongoDB, and REST API development.",
+    "soft_skills", "Self-description indicates a focus on clean code, maintainability, and continuous learning. Communication is clear and professional.",
+    "strengths", "Full-stack integration knowledge, hands-on project experience with Context API and REST architectures, and a problem-solving mindset.", 
+    "weaknesses", "Limited commercial professional experience; primary background is based on training and personal project development.",
+    "hiring_recommendation", "Qualified for interview. The candidate’s technical stack is an exact match for the job description, and the project portfolio indicates readiness for junior to mid-level full-stack responsibilities."
+  ]
+}

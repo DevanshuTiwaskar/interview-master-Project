@@ -15,9 +15,11 @@ export const useAuth = () => {
     try {
       setLoading(true);
       const data = await login({ email, password });
-      setUser(data.user);
+      if (data && data.user) {
+        setUser(data.user);
+      }
     } catch (error) {
-      console.log(error);
+      console.log("Error logging in:", error);
     } finally {
       setLoading(false);
     }
@@ -27,9 +29,11 @@ export const useAuth = () => {
     try {
       setLoading(true);
       const data = await register({ email, password, username });
-      setUser(data.user);
+      if (data && data.user) {
+        setUser(data.user);
+      }
     } catch (error) {
-      console.log(error);
+      console.log("Error registering:", error);
     } finally {
       setLoading(false);
     }
@@ -41,7 +45,7 @@ export const useAuth = () => {
       await logout();
       setUser(null);
     } catch (error) {
-      console.log(error);
+      console.log("Error logging out:", error);
     } finally {
       setLoading(false);
     }
@@ -51,12 +55,22 @@ export const useAuth = () => {
 
   useEffect(() => {
     const getAndSetUser = async () => {
-      const data = await getMe();
-      setUser(data.user);
-      setLoading(false);
+      try {
+        const data = await getMe();
+        if (data && data.user) {
+          setUser(data.user);
+        } else {
+          setUser(null);
+        }
+      } catch (error) {
+        console.log("Error fetching user:", error);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
     };
     getAndSetUser();
-  }, []);
+  }, [setUser, setLoading]);
 
   return { user, loading, handleLogin, handleLogout, handleRegister };
 };

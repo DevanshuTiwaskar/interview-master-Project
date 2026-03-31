@@ -4,12 +4,14 @@ const interviewRouter = express.Router()
 const interviewController =  require("../controllers/interview.controller")
 const upload = require('../middleware/file.middleware')
 
+
+
 /**
- * @route POST/api/interview
- * @description generate new interview report on this basic of user self descrition,resume pdf, job descrition
+ * @route POST /api/interview/
+ * @description generate new interview report on the basis of user self description,resume pdf and job description.
  * @access private
  */
-interviewRouter.post('/',authMiddleware.authUser,upload.single("resume"),interviewController.generateInterviewController)
+interviewRouter.post("/", authMiddleware.authUser, upload.single("resume"), interviewController.generateInterViewReportController)
 
 
 module.exports = interviewRouter

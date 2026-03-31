@@ -129,6 +129,9 @@ export async function getMe() {
     return response.data;
 
   } catch (error) {
+    if (error.response && error.response.status === 401) {
+      return null;
+    }
     console.log(error);
   }
 }

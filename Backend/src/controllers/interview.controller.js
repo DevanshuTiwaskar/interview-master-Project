@@ -1,41 +1,42 @@
-const pdfparse = require("pdf-parse")
+const pdfParse = require("pdf-parse")
 const generateInterviewReport = require('../services/ai.service')
-const interViewReportModel = require("../models/interviewReport.model")
+const interviewReportModel = require("../models/interviewReport.model")
 
+/**
+ * @description Controller to generate interview report based on user self description, resume and job description.
+ */
+async function generateInterViewReportController(req, res) {
 
-async function generateInterviewController(req,res) {
+    const resumeContent = await (new pdfParse.PDFParse(Uint8Array.from(req.file.buffer))).getText()
+    const { selfDescription, jobDescription } = req.body
 
-    const resumeContent = await (new pdfparse.PDFParse(Uint8Array.from(req.file.buffer))).getText()
-    const {jobDescription, selfDescription} = req.body
+    const interViewReportByAi = await generateInterviewReport({
+        resume: resumeContent.text,
+        selfDescription,
+        jobDescription
+    })
 
+    if (!interViewReportByAi || !interViewReportByAi.title) {
+        return res.status(500).json({
+            message: "Failed to generate interview report. Please try again."
+        })
+    }
 
-   const interViewReportByAi = await  generateInterviewReport({
-    resume: resumeContent,
-    jobDescription,
-    selfDescription
-   })
-
-   
-    const interviewReport = await interViewReportModel.create({
+    const interviewReport = await interviewReportModel.create({
         user: req.user.id,
         resume: resumeContent.text,
         selfDescription,
         jobDescription,
         ...interViewReportByAi
-
     })
 
     res.status(201).json({
-        message:"Interview report generated successfull",
+        message: "Interview report generated successfully.",
         interviewReport
     })
 
-
-
 }
 
-
-
 module.exports = {
-    generateInterviewController
+  generateInterViewReportController
 }
