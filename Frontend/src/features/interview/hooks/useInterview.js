@@ -11,4 +11,10 @@ export const useInterview = () => {
     }
 
      const {loading,setLoading,report,setReport,reports,setReports} = context
+
+     const generateReport = async ({jobDescription, selfDescription, resumeFile}) => {
+        
+     }
+
+
 }
